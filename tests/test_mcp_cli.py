@@ -9,9 +9,18 @@ when the http / sse transports are selected.
 
 from __future__ import annotations
 
+import importlib
+
 import pytest
 
-mcp_server = pytest.importorskip("src.mcp_server")
+# Skip on the *SDK*, not on this module.  ``importorskip("src.mcp_server")``
+# reports a broken module as an absent one, because the ``ModuleNotFoundError``
+# raised by mcp 2.x dropping ``mcp.server.fastmcp`` is an ``ImportError``
+# subclass — so it stayed green through the #227 regression it appears to
+# cover.  Keyed this way, a missing extra skips and a broken import fails.
+pytest.importorskip("mcp", reason="the `mcp` extra is not installed")
+
+mcp_server = importlib.import_module("src.mcp_server")
 
 
 def test_default_transport_is_stdio() -> None:
