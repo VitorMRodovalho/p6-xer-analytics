@@ -23,10 +23,10 @@
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/svelte": "^5.4.2",
-    "@types/node": "^26.4.0",
+    "@types/node": "^26.4.1",
     "@types/ws": "^8.18.1",
     "jsdom": "^30.0.1",
-    "svelte": "^5.56.10",
+    "svelte": "^5.57.0",
     "svelte-check": "^4.7.6",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",
-    "@supabase/supabase-js": "^2.107.0",
-    "posthog-js": "^1.422.1"
+    "@supabase/supabase-js": "^2.115.0",
+    "posthog-js": "^1.426.4"
   },
   "overrides": {
     "cookie": "^0.7.0"
